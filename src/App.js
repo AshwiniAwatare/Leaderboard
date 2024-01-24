@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Age from "./components/Age";
+import Leaderboard from "./components/Leaderboard";
+import Name from "./components/Name";
+import Points from "./components/Points";
+import Rank from "./components/Rank";
+import Table from "./components/Table";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="text-center buttons">
+        <header className="text-center">
+        </header>
+        <div className="text-center buttons">
+          <Router>
+          <Leaderboard></Leaderboard>
+
+            <Routes>
+            <Route path="/" element={<Name />} />
+              <Route path="/name" element={<Name />} />
+              <Route path="/points" element={<Points />} />
+              <Route path="/age" element={<Age />} />
+              <Route path="/rank" element={<Rank />} />
+            </Routes>
+          </Router>
+        </div>
+       
+      </div>
     </div>
   );
 }
